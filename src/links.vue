@@ -18,13 +18,18 @@
           {
             'vue-navbar-link': !link.dropdown,
             clickable: link.click
-          }
+          },
+          darkBackground ? 'light-text' : 'dark-text',
         ]"
         @click="buttonClick(link)"
       >
         {{link.name}}
       </button>
-      <div v-if="!link.dropdown" class="vue-navbar-button-background">
+      <div
+        v-if="!link.dropdown"
+        class="vue-navbar-button-background"
+        :class="[ darkBackground ? 'light-background' : 'dark-background' ]"
+      >
       </div>
       <div v-else class="vue-navbar-dropdown-container">
         <div class="vue-navbar-dropdown">
@@ -48,6 +53,7 @@ export default {
   props: [
     'links',
     'collapsed',
+    'darkBackground',
 
     'linksClass',
     'linkClass',
@@ -56,6 +62,21 @@ export default {
 </script>
 
 <style scoped>
+/* Colors */
+.light-background {
+  background-color: rgb(250, 250, 250);
+}
+.dark-background {
+  background-color: #262626;
+}
+.light-text {
+  color: rgb(250, 250, 250);
+}
+.dark-text {
+  color: #262626;
+}
+
+/* Navbar links */
 .vue-navbar-links {
   display: flex;
   transition: height 0.5s ease;
@@ -80,11 +101,11 @@ export default {
   left: 0;
   height: 100%;
   width: 0%;
-  background-color: rgb(250, 250, 250);
 }
 .vue-navbar-button-container:hover .vue-navbar-button-background {
   width: 100%;
 }
+
 .vue-navbar-button {
   border: 0;
   padding: 0;
@@ -93,14 +114,18 @@ export default {
   text-transform: uppercase;
   background-color: transparent;
   position: relative;
-  color: rgb(250, 250, 250);
   transition: color 0.5s ease;
   text-align: right;
   z-index: 1;
 }
 .vue-navbar-button-container:hover .vue-navbar-link {
-  color: #262626;
   cursor: pointer;
+}
+.vue-navbar-button-container:hover .vue-navbar-link.light-text {
+  color: #262626;
+}
+.vue-navbar-button-container:hover .vue-navbar-link.dark-text {
+  color: rgb(250, 250, 250);
 }
 
 .vue-navbar-link {

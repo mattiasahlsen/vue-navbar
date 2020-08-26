@@ -5,9 +5,12 @@
       class="toggle-collapse"
       @click="expanded = !expanded"
     >
-      <div class="line"/>
-      <div class="line"/>
-      <div class="line"/>
+      <div
+        v-for="n in 3"
+        :key="n"
+        class="line"
+        :class="[darkBackground ? 'light-line' : 'dark-line']"
+      />
     </div>
 
     <Links
@@ -20,6 +23,7 @@
         'overflow-hidden': collapsed && !expanded,
       }"
 
+      :darkBackground="darkBackground"
       :linksClass="linksClass"
       :linkClass="linkClass"
     />
@@ -46,6 +50,7 @@ export default {
   props: [
     'links',
     'collapsed',
+    'darkBackground',
 
     'linksClass',
     'linkClass',
@@ -77,12 +82,12 @@ export default {
   },
   mounted() {
     this.collapseViewHeight = this.$refs.ghostLinks.$el.offsetHeight
-    console.log(this.collapseViewHeight)
   }
 }
 </script>
 
 <style scoped>
+
 /* Links */
 .vue-navbar-links-container {
   display: flex;
@@ -109,9 +114,15 @@ export default {
   cursor: pointer;
   margin: 0.5em;
 }
+
 .line {
   height: 3px;
   border-radius: 1px;
+}
+.light-line {
   background-color: rgba(255, 255, 255, 0.8);
+}
+.dark-line {
+  background-color: rgba(38, 38, 38, 0.8);
 }
 </style>

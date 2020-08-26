@@ -4,6 +4,7 @@
       :logo="logo"
       :links="links"
       containerClass="navbar"
+      :darkBackground="true"
     />
   </div>
 </template>

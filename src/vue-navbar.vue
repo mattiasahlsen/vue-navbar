@@ -5,29 +5,36 @@
     @click="focusNavbar"
   >
     <div class="vue-navbar">
-      <div
-        class="vue-navbar-logo"
-        :class="[ logoContainerClass, { clickable: logo.click } ]"
-        @click="logoClick"
-      >
-        <img
-          v-if="logo.img"
-          class="vue-navbar-logo-img"
-          :class="logoImgClass"
-          :src="logo.img"
+      <div class="vue-navbar-logo-container">
+        <div
+          class="vue-navbar-logo"
+          :class="[
+            logoContainerClass,
+            { clickable: logo.click },
+            darkBg ? 'light-text' : 'dark-text',
+          ]"
+          @click="logoClick"
         >
-        <!--<h2
-          v-if="logo.text"
-          :class="logoTextClass"
-        >
-          {{logo.text}}
-        </h2>-->
+          <img
+            v-if="logo.img"
+            class="vue-navbar-logo-img"
+            :class="logoImgClass"
+            :src="logo.img"
+          >
+          <h2
+            v-if="logo.text"
+            :class="logoTextClass"
+          >
+            {{logo.text}}
+          </h2>
+        </div>
       </div>
 
       <LinksContainer
         class="normal-view-links"
         :links="links"
         :collapsed="false"
+        :darkBackground="darkBg"
 
         :linksClass="linksClass"
         :linkClass="linkClass"
@@ -36,6 +43,7 @@
         class="collapse-view-links"
         :links="links"
         :collapsed="true"
+        :darkBackground="darkBg"
 
         :linksClass="linksClass"
         :linkClass="linkClass"
@@ -63,6 +71,7 @@ export default {
     'logoTextClass',
     'logoImgClass',
 
+    'darkBackground',
     'linksClass',
     'linkClass',
   ],
@@ -71,6 +80,10 @@ export default {
     }
   },
   computed: {
+    darkBg() {
+      if (this.darkBackground === undefined) return true
+      else return this.darkBackground
+    }
   },
   methods: {
     logoClick() {
@@ -95,6 +108,12 @@ p, h1, h2, h3, h4, h5, h6 {
 .clickable {
   cursor: pointer;
 }
+.light-text {
+  color: rgb(250, 250, 250);
+}
+.dark-text {
+  color: #262626;
+}
 
 /* Whole navbar */
 .vue-navbar-container {
@@ -107,10 +126,13 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* Logo */
-.vue-navbar-logo {
-  color: rgb(250, 250, 250);
+.vue-navbar-logo-container {
   display: flex;
   align-items: flex-start;
+}
+.vue-navbar-logo {
+  display: flex;
+  align-items: center;
 }
 .vue-navbar-logo-img {
   height: 40px;
