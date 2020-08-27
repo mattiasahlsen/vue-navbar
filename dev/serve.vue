@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <vue-navbar
+      class="navbar"
       :logo="logo"
       :links="links"
-      containerClass="navbar"
       :darkBackground="true"
     />
   </div>

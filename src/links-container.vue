@@ -24,7 +24,7 @@
       }"
 
       :darkBackground="darkBackground"
-      :linksClass="linksClass"
+      :dropdownLinkClass="dropdownLinkClass"
       :linkClass="linkClass"
     />
 
@@ -34,7 +34,7 @@
       :collapsed="true"
       class="ghost"
 
-      :linksClass="linksClass"
+      :dropdownLinkClass="dropdownLinkClass"
       :linkClass="linkClass"
     />
 
@@ -52,21 +52,19 @@ export default {
     'collapsed',
     'darkBackground',
 
-    'linksClass',
     'linkClass',
+    'dropdownLinkClass'
   ],
   data() {
     return {
       expanded: false,
-
-      collapseViewHeight: 0,
     }
   },
   computed: {
     height() {
       if (!this.collapsed) return 'auto'
       else if (this.expanded) {
-        return this.collapseViewHeight + 'px'
+        return this.collapseViewHeight() + 'px'
       } else {
         return '0px'
       }
@@ -78,10 +76,12 @@ export default {
     },
     dropdownItemClick(item) {
       if (item.click) item.click()
+    },
+    collapseViewHeight() {
+      return this.$refs.ghostLinks.$el.offsetHeight
     }
   },
   mounted() {
-    this.collapseViewHeight = this.$refs.ghostLinks.$el.offsetHeight
   }
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
   <nav
     class="vue-navbar-container"
-    :class="containerClass"
     @click="focusNavbar"
   >
     <div class="vue-navbar">
@@ -9,7 +8,6 @@
         <div
           class="vue-navbar-logo"
           :class="[
-            logoContainerClass,
             { clickable: logo.click },
             darkBg ? 'light-text' : 'dark-text',
           ]"
@@ -36,7 +34,6 @@
         :collapsed="false"
         :darkBackground="darkBg"
 
-        :linksClass="linksClass"
         :linkClass="linkClass"
       />
       <LinksContainer
@@ -45,8 +42,8 @@
         :collapsed="true"
         :darkBackground="darkBg"
 
-        :linksClass="linksClass"
         :linkClass="linkClass"
+        :dropdownLinkClass="dropdownLinkClass"
       />
 
     </div>
@@ -64,16 +61,14 @@ export default {
   props: [
     'logo',
     'links',
+    'darkBackground',
 
     // classes
-    'containerClass',
-    'logoContainerClass',
     'logoTextClass',
     'logoImgClass',
 
-    'darkBackground',
-    'linksClass',
     'linkClass',
+    'dropdownLinkClass',
   ],
   data() {
     return {

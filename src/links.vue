@@ -3,7 +3,6 @@
     class="vue-navbar-links"
     :class="[
       collapsed ? 'vue-navbar-links-collapse-view' : 'vue-navbar-links-normal-view',
-      linksClass,
     ]"
   >
     <div
@@ -39,6 +38,7 @@
             href="#"
             @click.prevent="dropdownItemClick(item)"
             class="vue-navbar-link"
+            :class="[ dropdownLinkClass ]"
           >
             {{item.name}}
           </a>
@@ -55,8 +55,8 @@ export default {
     'collapsed',
     'darkBackground',
 
-    'linksClass',
     'linkClass',
+    'dropdownLinkClass',
   ],
 }
 </script>
@@ -118,9 +118,6 @@ export default {
   text-align: right;
   z-index: 1;
 }
-.vue-navbar-button-container:hover .vue-navbar-link {
-  cursor: pointer;
-}
 .vue-navbar-button-container:hover .vue-navbar-link.light-text {
   color: #262626;
 }
@@ -130,6 +127,7 @@ export default {
 
 .vue-navbar-link {
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 /* Dropdown */
