@@ -61,20 +61,8 @@ export default {
 }
 </script>
 
-<style scoped>
-/* Colors */
-.light-background {
-  background-color: rgb(250, 250, 250);
-}
-.dark-background {
-  background-color: #262626;
-}
-.light-text {
-  color: rgb(250, 250, 250);
-}
-.dark-text {
-  color: #262626;
-}
+<style scoped lang="scss">
+@import "./styles.scss";
 
 /* Navbar links */
 .vue-navbar-links {

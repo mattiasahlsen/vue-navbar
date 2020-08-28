@@ -1,0 +1,23 @@
+$light: #fefefe;
+$dark: #262626;
+
+/* General */
+p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+.clickable {
+  cursor: pointer;
+}
+.light-text {
+  color: $light;
+}
+.dark-text {
+  color: $dark;
+}
+.light-background {
+  background-color: $light;
+}
+.dark-background {
+  background-color: $dark;
+}

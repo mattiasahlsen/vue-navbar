@@ -9,7 +9,7 @@
         v-for="n in 3"
         :key="n"
         class="line"
-        :class="[darkBackground ? 'light-line' : 'dark-line']"
+        :class="[darkBackground ? 'light-background' : 'dark-background']"
       />
     </div>
 
@@ -86,7 +86,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "./styles.scss";
 
 /* Links */
 .vue-navbar-links-container {
@@ -118,11 +119,5 @@ export default {
 .line {
   height: 3px;
   border-radius: 1px;
-}
-.light-line {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-.dark-line {
-  background-color: rgba(38, 38, 38, 0.8);
 }
 </style>

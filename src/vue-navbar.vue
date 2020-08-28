@@ -94,21 +94,8 @@ export default {
 }
 </script>
 
-<style scoped>
-/* General */
-p, h1, h2, h3, h4, h5, h6 {
-  padding: 0;
-  margin: 0;
-}
-.clickable {
-  cursor: pointer;
-}
-.light-text {
-  color: rgb(250, 250, 250);
-}
-.dark-text {
-  color: #262626;
-}
+<style scoped lang="scss">
+@import "./styles.scss";
 
 /* Whole navbar */
 .vue-navbar-container {

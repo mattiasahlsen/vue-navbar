@@ -2,17 +2,14 @@
   "name": "vue-navbar",
   "version": "1.0.0",
   "description": "",
-
   "main": "dist/vue-navbar.ssr.js",
   "browser": "dist/vue-navbar.esm.js",
   "module": "dist/vue-navbar.esm.js",
   "unpkg": "dist/vue-navbar.min.js",
-
   "files": [
     "dist/*",
     "src/**/*.vue"
   ],
-
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
@@ -20,10 +17,10 @@
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
-
   "dependencies": {
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.1"
   },
-
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
