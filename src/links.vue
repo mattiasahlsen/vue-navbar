@@ -23,17 +23,8 @@
         <div
           class="vue-navbar-dropdown box-shadow"
           :class="[darkBackground ? 'dark-background' : 'light-backgruond']"
+          :style="{ 'background-color': dropdownBackground }"
         >
-          <!--<a
-            v-for="(item, index) in link.dropdown"
-            :key="index"
-            href="#"
-            @click.prevent="dropdownItemClick(item)"
-            class="vue-navbar-link"
-            :class="[ dropdownLinkClass ]"
-          >
-            {{item.name}}
-          </a>-->
           <Link
             v-for="(item, index) in link.dropdown"
             :key="index"
@@ -50,6 +41,7 @@
 
 <script>
 import Link from './link'
+import variables from './styles/variables.scss'
 
 export default {
   components: {
@@ -62,8 +54,15 @@ export default {
     'onHover',
 
     'linkClass',
-    'dropdownLinkClass',
+    'dropdownBackgroundColor'
   ],
+  computed: {
+    dropdownBackground() {
+      if (this.dropdownBackgroundColor) return this.dropdownBackgroundColor
+      else if (this.darkBackground) return variables.dark
+      else return variables.light
+    }
+  }
 }
 </script>
 

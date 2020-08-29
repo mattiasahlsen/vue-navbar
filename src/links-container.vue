@@ -25,7 +25,8 @@
       :class="{
         'overflow-hidden': collapsed && !expanded,
       }"
-      :dropdownLinkClass="dropdownLinkClass"
+
+      :dropdownBackgroundColor="dropdownBackgroundColor"
       :linkClass="linkClass"
     />
 
@@ -37,7 +38,8 @@
       :darkBackground="darkBackground"
 
       class="ghost"
-      :dropdownLinkClass="dropdownLinkClass"
+
+      :dropdownBackgroundColor="dropdownBackgroundColor"
       :linkClass="linkClass"
     />
 
@@ -57,7 +59,7 @@ export default {
     'onHover',
 
     'linkClass',
-    'dropdownLinkClass'
+    'dropdownBackgroundColor'
   ],
   data() {
     return {

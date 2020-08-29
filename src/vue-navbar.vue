@@ -36,7 +36,7 @@
         :onHover="onHover"
 
         :linkClass="linkClass"
-        :dropdownLinkClass="dropdownLinkClass"
+        :dropdownBackgroundColor="dropdownBackgroundColor"
       />
       <LinksContainer
         class="collapse-view-links"
@@ -46,7 +46,7 @@
         :onHover="onHover"
 
         :linkClass="linkClass"
-        :dropdownLinkClass="dropdownLinkClass"
+        :dropdownBackgroundColor="dropdownBackgroundColor"
       />
 
     </div>
@@ -78,7 +78,8 @@ export default {
     logoTextClass: [String, Array, Object],
     logoImgClass: [String, Array, Object],
     linkClass: [String, Array, Object],
-    dropdownLinkClass: [String, Array, Object],
+    
+    dropdownBackgroundColor: String,
   },
   methods: {
     logoClick() {
