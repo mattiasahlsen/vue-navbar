@@ -16,6 +16,7 @@
           linkClass,
           {
             'vue-navbar-link': !link.dropdown,
+            'vue-navbar-link-with-background': !link.dropdown && (onHover === 'slide' || onHover === 'fade'),
             clickable: link.click
           },
           darkBackground ? 'light-text' : 'dark-text',
@@ -25,15 +26,20 @@
         {{link.name}}
       </button>
       <div
-        v-if="!link.dropdown && (onHover === 'slide' || onHover === 'fade')"
+        v-if="!link.dropdown"
         class="vue-navbar-button-background"
         :class="[
           darkBackground ? 'light-background' : 'dark-background',
-          onHover === 'slide' ? 'slide-background' : 'fade-background'
+          {
+            'vue-navbar-button-underline': onHover === 'slide-underline' || onHover === 'fade-underline',
+            'slide-background' : onHover === 'slide' || onHover === 'slide-underline',
+            'fade-background' : onHover === 'fade' || onHover === 'fade-underline',
+          }
         ]"
       >
       </div>
-      <div v-else class="vue-navbar-dropdown-container">
+
+      <div v-if="link.dropdown" class="vue-navbar-dropdown-container">
         <div class="vue-navbar-dropdown box-shadow">
           <a
             v-for="(item, index) in link.dropdown"
@@ -100,7 +106,7 @@ export default {
 }
 
 /* Link */
-.vue-navbar-button-container:hover .vue-navbar-link {
+.vue-navbar-button-container:hover .vue-navbar-link-with-background {
   &.light-text {
     color: $dark;
   }
@@ -113,16 +119,23 @@ export default {
   cursor: pointer;
 }
 
-/* Background */
+/* Background and underline */
 .vue-navbar-button-background {
   position: absolute;
   border-radius: 3px;
 
   transition: width 0.5s ease, opacity 0.5s ease;
-  top: 0;
   left: 0;
+}
+.vue-navbar-button-background:not(.vue-navbar-button-underline) {
+  top: 0;
   height: 100%;
 }
+.vue-navbar-button-underline {
+  margin-top: 2px;
+  height: 1px,
+}
+
 .slide-background {
   width: 0%;
   opacity: 1;

@@ -36,6 +36,7 @@
         :onHover="onHover"
 
         :linkClass="linkClass"
+        :dropdownLinkClass="dropdownLinkClass"
       />
       <LinksContainer
         class="collapse-view-links"

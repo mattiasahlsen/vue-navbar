@@ -5,7 +5,11 @@
       :logo="logo"
       :links="links"
       :darkBackground="true"
-      :onHover="'fade'"
+
+      logoTextClass="logo-text"
+      logoImgClass="logo-img"
+      linkClass="navbar-link"
+      dropdownLinkClass="dropdown-link"
     />
   </div>
 </template>
