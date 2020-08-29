@@ -1,5 +1,5 @@
 {
-  "name": "vue-navbar",
+  "name": "vue-navbar-component",
   "version": "1.0.0",
   "description": "A reusable navbar component for vue.",
   "main": "dist/vue-navbar.ssr.js",
