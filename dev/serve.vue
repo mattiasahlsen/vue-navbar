@@ -10,6 +10,8 @@
       logoImgClass="logo-img"
       linkClass="navbar-link"
       dropdownLinkClass="dropdown-link"
+
+      onHover="fade-underline"
     />
   </div>
 </template>

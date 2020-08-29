@@ -75,12 +75,6 @@ export default {
     }
   },
   methods: {
-    buttonClick(button) {
-      if (button.click) button.click()
-    },
-    dropdownItemClick(item) {
-      if (item.click) item.click()
-    },
     collapseViewHeight() {
       return this.$refs.ghostLinks.$el.offsetHeight
     }
