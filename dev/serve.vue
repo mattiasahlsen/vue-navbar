@@ -5,6 +5,7 @@
       :logo="logo"
       :links="links"
       :darkBackground="true"
+      :onHover="'fade'"
     />
   </div>
 </template>

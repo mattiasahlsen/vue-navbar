@@ -25,9 +25,12 @@
         {{link.name}}
       </button>
       <div
-        v-if="!link.dropdown"
+        v-if="!link.dropdown && (onHover === 'slide' || onHover === 'fade')"
         class="vue-navbar-button-background"
-        :class="[ darkBackground ? 'light-background' : 'dark-background' ]"
+        :class="[
+          darkBackground ? 'light-background' : 'dark-background',
+          onHover === 'slide' ? 'slide-background' : 'fade-background'
+        ]"
       >
       </div>
       <div v-else class="vue-navbar-dropdown-container">
@@ -54,6 +57,7 @@ export default {
     'links',
     'collapsed',
     'darkBackground',
+    'onHover',
 
     'linkClass',
     'dropdownLinkClass',
@@ -65,7 +69,7 @@ export default {
 @import './styles/main.scss';
 @import './styles/dropdown.scss';
 
-/* Navbar links */
+/* Navbar buttons */
 .vue-navbar-links {
   display: flex;
   transition: height 0.5s ease;
@@ -81,20 +85,6 @@ export default {
   margin-top: 0.25em;
   position: relative;
 }
-.vue-navbar-button-background {
-  position: absolute;
-  border-radius: 3px;
-
-  transition: width 0.5s ease;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0%;
-}
-.vue-navbar-button-container:hover .vue-navbar-button-background {
-  width: 100%;
-}
-
 .vue-navbar-button {
   border: 0;
   padding: 0;
@@ -108,6 +98,8 @@ export default {
   z-index: 1;
 
 }
+
+/* Link */
 .vue-navbar-button-container:hover .vue-navbar-link {
   &.light-text {
     color: $dark;
@@ -116,11 +108,36 @@ export default {
     color: $light;
   }
 }
-
 .vue-navbar-link {
   font-size: 1.2rem;
   cursor: pointer;
 }
+
+/* Background */
+.vue-navbar-button-background {
+  position: absolute;
+  border-radius: 3px;
+
+  transition: width 0.5s ease, opacity 0.5s ease;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.slide-background {
+  width: 0%;
+  opacity: 1;
+}
+.vue-navbar-button-container:hover .slide-background {
+  width: 100%;
+}
+.fade-background {
+  width: 100%;
+  opacity: 0;
+}
+.vue-navbar-button-container:hover .fade-background {
+  opacity: 1;
+}
+
 
 /* Media queries */
 @media (min-width: 768px) {

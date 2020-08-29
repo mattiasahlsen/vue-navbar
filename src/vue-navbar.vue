@@ -9,7 +9,7 @@
           class="vue-navbar-logo"
           :class="[
             { clickable: logo.click },
-            darkBg ? 'light-text' : 'dark-text',
+            darkBackground ? 'light-text' : 'dark-text',
           ]"
           @click="logoClick"
         >
@@ -32,7 +32,8 @@
         class="normal-view-links"
         :links="links"
         :collapsed="false"
-        :darkBackground="darkBg"
+        :darkBackground="darkBackground"
+        :onHover="onHover"
 
         :linkClass="linkClass"
       />
@@ -40,7 +41,8 @@
         class="collapse-view-links"
         :links="links"
         :collapsed="true"
-        :darkBackground="darkBg"
+        :darkBackground="darkBackground"
+        :onHover="onHover"
 
         :linkClass="linkClass"
         :dropdownLinkClass="dropdownLinkClass"
@@ -58,27 +60,24 @@ export default {
   components: {
     LinksContainer,
   },
-  props: [
-    'logo',
-    'links',
-    'darkBackground',
+  props: {
+    logo: Object,
+    links: Array,
+    darkBackground: {
+      type: Boolean,
+      default: true,
+    },
+    onHover: {
+      type: String,
+      default: 'slide'
+      // options: 'slide', 'fade', 'slide-underline', 'fade-underline'
+    },
 
     // classes
-    'logoTextClass',
-    'logoImgClass',
-
-    'linkClass',
-    'dropdownLinkClass',
-  ],
-  data() {
-    return {
-    }
-  },
-  computed: {
-    darkBg() {
-      if (this.darkBackground === undefined) return true
-      else return this.darkBackground
-    }
+    logoTextClass: [String, Array, Object],
+    logoImgClass: [String, Array, Object],
+    linkClass: [String, Array, Object],
+    dropdownLinkClass: [String, Array, Object],
   },
   methods: {
     logoClick() {
@@ -89,8 +88,6 @@ export default {
       this.$el.focus()
     }
   },
-  mounted() {
-  }
 }
 </script>
 

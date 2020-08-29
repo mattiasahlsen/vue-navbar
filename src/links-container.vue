@@ -16,14 +16,15 @@
     <Links
       :links="links"
       :collapsed="collapsed"
+      :onHover="onHover"
+      :darkBackground="darkBackground"
+
       :style="{
         height,
       }"
       :class="{
         'overflow-hidden': collapsed && !expanded,
       }"
-
-      :darkBackground="darkBackground"
       :dropdownLinkClass="dropdownLinkClass"
       :linkClass="linkClass"
     />
@@ -32,8 +33,10 @@
       ref="ghostLinks"
       :links="links"
       :collapsed="true"
-      class="ghost"
+      :onHover="onHover"
+      :darkBackground="darkBackground"
 
+      class="ghost"
       :dropdownLinkClass="dropdownLinkClass"
       :linkClass="linkClass"
     />
@@ -51,6 +54,7 @@ export default {
     'links',
     'collapsed',
     'darkBackground',
+    'onHover',
 
     'linkClass',
     'dropdownLinkClass'
