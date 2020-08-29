@@ -1,3 +1,4 @@
 module.exports = {
-  publicPath: '/vue-navbar'
+  publicPath: '/vue-navbar',
+  outputDir: 'docs',
 }
