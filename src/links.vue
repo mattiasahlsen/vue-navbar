@@ -22,7 +22,7 @@
       >
         <div
           class="vue-navbar-dropdown box-shadow"
-          :class="[darkBackground ? 'dark-background' : 'light-backgruond']"
+          :class="[darkBackground ? 'dark-background' : 'light-background']"
           :style="{ 'background-color': dropdownBackground }"
         >
           <Link
@@ -73,7 +73,7 @@ export default {
 /* Navbar buttons */
 .vue-navbar-links {
   display: flex;
-  transition: height 0.5s ease;
+  //transition: height 0.5s ease;
 }
 .vue-navbar-links-collapse-view {
   flex-direction: column;
