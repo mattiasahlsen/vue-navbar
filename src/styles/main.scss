@@ -1,5 +1,4 @@
-$light: #fefefe;
-$dark: #262626;
+@import './variables.scss';
 
 /* General */
 p, h1, h2, h3, h4, h5, h6 {
@@ -20,4 +19,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .dark-background {
   background-color: $dark;
+}
+.box-shadow {
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.4);
+  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.4);
 }

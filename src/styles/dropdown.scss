@@ -1,0 +1,43 @@
+@import './variables.scss';
+
+.vue-navbar-dropdown-container {
+  position: absolute;
+  right: 0;
+  height: 0px;
+  padding: 0;
+  
+  overflow: hidden;
+  transition: all 0.5s ease;
+  transition-property: opacity, padding;
+  opacity: 0;
+  z-index: 2;
+}
+
+.vue-navbar-button-container:hover .vue-navbar-dropdown-container, .vue-navbar-dropdown-container:hover {
+  height: auto;
+  padding: 1em;
+  opacity: 1;
+}
+
+.vue-navbar-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  margin-top: 0.1em;
+  padding: 1em;
+  border-radius: 5px;
+  position: relative;
+
+  a {
+    text-decoration: none;
+    color: $dark;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    margin-top: 0.1em;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $link;
+  }
+}

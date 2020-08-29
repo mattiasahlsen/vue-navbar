@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "./styles.scss";
+@import './styles/main.scss';
 
 /* Links */
 .vue-navbar-links-container {

@@ -95,7 +95,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "./styles.scss";
+@import './styles/main.scss';
 
 /* Whole navbar */
 .vue-navbar-container {

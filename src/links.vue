@@ -31,7 +31,7 @@
       >
       </div>
       <div v-else class="vue-navbar-dropdown-container">
-        <div class="vue-navbar-dropdown">
+        <div class="vue-navbar-dropdown box-shadow">
           <a
             v-for="(item, index) in link.dropdown"
             :key="index"
@@ -62,7 +62,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "./styles.scss";
+@import './styles/main.scss';
+@import './styles/dropdown.scss';
 
 /* Navbar links */
 .vue-navbar-links {
@@ -105,63 +106,20 @@ export default {
   transition: color 0.5s ease;
   text-align: right;
   z-index: 1;
+
 }
-.vue-navbar-button-container:hover .vue-navbar-link.light-text {
-  color: #262626;
-}
-.vue-navbar-button-container:hover .vue-navbar-link.dark-text {
-  color: rgb(250, 250, 250);
+.vue-navbar-button-container:hover .vue-navbar-link {
+  &.light-text {
+    color: $dark;
+  }
+  &.dark-text {
+    color: $light;
+  }
 }
 
 .vue-navbar-link {
   font-size: 1.2rem;
   cursor: pointer;
-}
-
-/* Dropdown */
-.vue-navbar-dropdown-container {
-  position: absolute;
-  right: 0;
-  
-  overflow: hidden;
-  transition: all 0.5s ease;
-  transition-property: opacity, padding;
-  height: 0px;
-  padding: 0;
-  opacity: 0;
-  z-index: 2;
-}
-.vue-navbar-button-container:hover .vue-navbar-dropdown-container, .vue-navbar-dropdown-container:hover {
-  height: auto;
-  padding: 1em;
-  opacity: 1;
-}
-
-.vue-navbar-dropdown {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: white;
-  margin-top: 0.1em;
-  padding: 1em;
-  border-radius: 5px;
-  position: relative;
-
-  -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.4);
-  -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.4);
-  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.4);
-}
-
-.vue-navbar-dropdown a {
-  text-decoration: none;
-  color: #4d4d4d;
-  transition: color 0.2s ease;
-  white-space: nowrap;
-  margin-top: 0.1em;
-}
-.vue-navbar-dropdown a:hover {
-  text-decoration: none;
-  color: #3399ff;
 }
 
 /* Media queries */
