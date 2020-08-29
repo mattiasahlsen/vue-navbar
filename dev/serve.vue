@@ -11,7 +11,7 @@
           logoTextClass="logo-text"
           logoImgClass="logo-img"
           linkClass="navbar-link"
-          dropdownLinkClass="dropdown-link"
+          dropdownBackgroundColor="rgba(0, 0, 0, 0.4)"
 
           onHover="slide"
         />
@@ -90,7 +90,7 @@ body, html {
 
 .content {
   flex: 1;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('../src/assets/hero.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../src/assets/hero.jpg');
   background-size: cover;
 
   display: flex;

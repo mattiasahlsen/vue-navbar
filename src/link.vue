@@ -68,6 +68,7 @@ export default {
   transition: color 0.5s ease;
   text-align: right;
   z-index: 1;
+  white-space: nowrap;
 }
 
 /* Background and underline */

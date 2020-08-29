@@ -1,7 +1,7 @@
 {
   "name": "vue-navbar",
   "version": "1.0.0",
-  "description": "",
+  "description": "A reusable navbar component for vue.",
   "main": "dist/vue-navbar.ssr.js",
   "browser": "dist/vue-navbar.esm.js",
   "module": "dist/vue-navbar.esm.js",

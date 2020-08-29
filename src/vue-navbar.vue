@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import LinksContainer from './links-container'
+import LinksContainer from './links-container.vue'
 
 export default {
   name: 'VueNavbar', // vue component name

@@ -47,7 +47,8 @@
 </template>
 
 <script>
-import Links from './links'
+import Links from './links.vue'
+
 export default {
   components: {
     Links,

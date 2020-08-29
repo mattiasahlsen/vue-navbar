@@ -40,8 +40,10 @@
 </template>
 
 <script>
-import Link from './link'
-import variables from './styles/variables.scss'
+import Link from './link.vue'
+
+const light = '#fefefe'
+const dark = '#262626'
 
 export default {
   components: {
@@ -59,8 +61,8 @@ export default {
   computed: {
     dropdownBackground() {
       if (this.dropdownBackgroundColor) return this.dropdownBackgroundColor
-      else if (this.darkBackground) return variables.dark
-      else return variables.light
+      else if (this.darkBackground) return dark
+      else return light
     }
   }
 }
