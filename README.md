@@ -85,7 +85,7 @@ export default {
 | Name           | Type    | Default       | Description | Required |
 | ---            | ---     | ---           | ---         | ---
 | logo           | Logo  | {}        | Logo img and text. | false |
-| links  | Array<Link>  | [] | The links to the right of the navbar. | false |
+| links  | Link[]  | [] | The links to the right of the navbar. | false |
 | darkBackground  | Boolean  | true | If the background of the navbar is dark. darkBackground: true will result in light text. | false |
 | onHover  | HoverOption  | 'slide' | Hover effects for the links. | false |
 | logoTextClass | String/Array/Object  | undefined | Classes that will be applied to the logo text. Same syntax as :class in vue. | false |
