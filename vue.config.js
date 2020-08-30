@@ -1,4 +1,6 @@
 module.exports = {
-  publicPath: '/vue-navbar',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/vue-navbar'
+    : '/',
   outputDir: 'docs',
 }

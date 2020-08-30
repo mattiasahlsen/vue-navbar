@@ -1,6 +1,6 @@
 {
   "name": "vue-navbar-component",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A reusable navbar component for vue.",
   "main": "dist/vue-navbar.ssr.js",
   "browser": "dist/vue-navbar.esm.js",
@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "sass": "^1.26.10",
-    "sass-loader": "^10.0.1"
+    "sass-loader": "^10.0.1",
+    "vue-navbar-component": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

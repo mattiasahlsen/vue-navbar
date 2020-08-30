@@ -62,8 +62,14 @@ export default {
     LinksContainer,
   },
   props: {
-    logo: Object,
-    links: Array,
+    logo: {
+      type: Object,
+      default: {},
+    },
+    links: {
+      type: Array,
+      default: []
+    },
     darkBackground: {
       type: Boolean,
       default: true,
