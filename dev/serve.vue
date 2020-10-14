@@ -27,8 +27,8 @@
 
 <script>
 import Vue from 'vue'
-// import VueNavbar from '@/vue-navbar.vue'
-import VueNavbar from 'vue-navbar-component'
+import VueNavbar from '@/vue-navbar.vue'
+//import VueNavbar from '.vue-navbar-component'
 
 const links = [
   {
