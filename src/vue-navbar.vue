@@ -129,14 +129,12 @@ export default {
 /* Links */
 @media (max-width: 767px) {
   .normal-view-links {
-    display: none;
-    position: absolute;
+    display: none !important;
   }
 }
 @media (min-width: 768px) {
   .collapse-view-links {
-    display: none;
-    position: absolute;
+    display: none !important;
   }
 }
 </style>
